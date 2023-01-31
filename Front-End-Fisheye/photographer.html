@@ -1,37 +1,72 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="fr">
+<head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/538a48f33d.js" crossorigin="anonymous"></script> <!--ajout script fontawesome-->
     <title>Fisheye - photographe </title>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+        <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="Logo Fisheye Home page" /></a><!--ajout de la description alternative-->
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+        <div class="photograph-header">
+        </div>
+        <section class="photograph_medias">
+            <div class="tri">
+                <p class="trier_par">Trier par</p>
+                <select class="choix" tabindex="3">
+                    <option class="pop" value="pop">Popularité</option>
+                    <option class="date" value="date">Date</option>
+                    <option class="titre" value="titre">Titre</option>
+                </select>
+            </div>
+            <div class="cartes_medias">
+            </div>
+            <aside class="bandeau"></aside>
+        </section>
     </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-  </body>
+   
+    <div id="contact_modal"> <!--ajout d'une modal de contact'-->
+        <div class="modal">
+            <header>
+                <h2 id="titre_modal" aria-label="Formulaire de contact">Contactez-moi</h2>
+                <img src="assets/icons/close.svg" alt="ferme le formulaire" onclick="closeModal()" />
+            </header>
+            <form id="formulaire">
+                <div class=formData>
+                    <label for="prenom">Prénom:</label>
+                    <input class="text-control" aria-label="entrez votre prénom" type="text" id="prenom" name="prenom" required minlength="2" />
+                </div>
+                <div class=formData>
+                    <label for="nom">Nom:</label>
+                    <input class="text-control" aria-label="entrez votre nom" type="text" id="nom" name="nom" required minlength="2" />
+                </div>
+                <div class=formData>
+                    <label for="email">Email:</label>
+                    <input class="text-control" aria-label="entrez votre adresse email" type="email" id="email" name="email" required />
+                </div>
+                <div class=formData>
+                    <label for="message">Votre message:</label>
+                    <textarea class="text-control" aria-label="entrer votre message" type="text" id="message" name="message" required></textarea>
+                </div>
+                <button class="contact_button" type=button aria-label="envoyer le formulaire" id="envoyer">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="scripts/factories/fact_photographer.js"></script>
+    <script src="scripts/factories/fact_medias.js"></script>
+    <script src="scripts/factories/fact_lightbox.js"></script>
+    <script src="scripts/utils/lightbox.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
+
+
+
+</body>
 </html>
