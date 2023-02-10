@@ -20,7 +20,7 @@
 function photographerFactory(data) {                                 
 
     function getUserCardDOM() {                                     //recuperation des elements
-        const { portrait, name, city, country, tagline, price, id } = data;
+        const { name, id, city, country, tagline, price, portrait} = data;
         const picture = `assets/photographers/${portrait}`;
 
 
@@ -68,7 +68,7 @@ function photographerFactory(data) {
 function photographerFactoryInfo(data) {
 
     function getUserMediaCardDOM() {
-        const { portrait, name, city, country, tagline } = data;
+        const { name, city, country, tagline,portrait } = data;
 
         const section = document.createElement("section");
         const div = document.createElement("div");
