@@ -7,7 +7,7 @@ prenom.addEventListener("change", validPrenom);
 
 function validPrenom(inputFirst) {
     let prenomV = new RegExp('^[a-zA-Z-\s]+$');
-    let testPrenom = prenomV.test(first.value);
+    let testPrenom = prenomV.test(inputFirst.value);
 
     if (!testPrenom) {
         prenom.parentElement.setAttribute("data-error-visible", "true");
@@ -27,7 +27,7 @@ nom.focus();
 
 function validNom(inputLast) {
     let nomV = new RegExp('^[a-zA-Z-\s]+$');
-    let testNom = nomV.test(last.value);
+    let testNom = nomV.test(inputLast.value);
 
     if (!testNom) {
         nom.parentElement.setAttribute("data-error-visible", "true");

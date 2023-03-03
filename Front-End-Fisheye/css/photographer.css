@@ -185,8 +185,8 @@
 
 /*page du photographe+bandeau*/
 .bandeau {
-    display: flex;
-    align-items: center;
+    display:inline-flex;
+    align-items:center;
     background-color: #DB8876;
     width: 320px;
     height: 70px;
@@ -198,19 +198,22 @@
     margin-right: 50px;
 }
 
-#total_likes, #prix {
+#total_likes, #gain {
     font-size: 24px;
     font-weight: 600;
     margin-left: 20px;
 }
 
-#prix {
-    margin-left: 70px;
+#gain {
+    margin-left: 50px;
 }
 
-.bandeau i {
+.fa-heart {
     font-size: 22px;
+    width: 22px;
+    height: 22px;
     margin-left: 10px;
+   
 }
 
 
