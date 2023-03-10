@@ -1,5 +1,4 @@
 function mediaFactory(data) {
-
     function getUserMediaDOM() {
 
         //init dom
@@ -33,7 +32,6 @@ function mediaFactory(data) {
             img.setAttribute("src", photo);
             img.setAttribute("alt", "photo" + " " + title);
             img.className = "mediaImg";
-
             carteMedia.appendChild(img);
         }
 
@@ -51,7 +49,6 @@ function mediaFactory(data) {
         coeur.className = "fas fa-heart";
         coeur.setAttribute("aria-label", "icone coeur cliquable");
         coeur.setAttribute("tabindex", "4");
-
         spanCoeur.appendChild(coeur);
         infoPhoto.appendChild(h2);
         infoPhoto.appendChild(nbreLike);
@@ -75,7 +72,6 @@ function bandeau() {
     like.id = "total_likes";
     coeurb.className = "fas fa-heart";
     prix.id = "prix";
-
     bandeauHtml.appendChild(like);
     bandeauHtml.appendChild(coeurb);
     bandeauHtml.appendChild(prix);

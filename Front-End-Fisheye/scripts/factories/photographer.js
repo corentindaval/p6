@@ -104,7 +104,7 @@ function photographerFactoryInfo(data) {
         section.appendChild(img);
 
         document.getElementById("titre_modal").innerHTML = document.getElementById("titre_modal").innerHTML + "<br/>" + data.name; //recuperation du texte présent dans l'id  titre_modal et  ajout d'un retour a la ligne et du nom du photographe concerner
-
+       
         return section;
     }
     return { getUserMediaCardDOM }

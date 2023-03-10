@@ -9,15 +9,14 @@ const menuSelect = document.querySelector(".choix");
 //recup json
 async function getPhotographers() {
     const response = await fetch("data/photographers.json");  //appel du json
-    const data = await response.json();   // recup des données du json
-    return data;                           //  retourne les données json
+    const media = await response.json();   // recup des données du json
+    return media;                           //  retourne les données json
 }
 
 
 //affichage header
 
 function displayData(photographers) {
-
     const photographerHeader = document.querySelector(".photograph-header");
     let bandeauPrix = 0;
 
@@ -37,7 +36,6 @@ function displayData(photographers) {
 
 // affichage contenue
 function displayDataMedia(medias) {
-
     switch (menuSelect.value) {       // selection
 
         case "pop":
@@ -60,18 +58,18 @@ function displayDataMedia(medias) {
     }
     //affichage de la selection
     const cartesMedias = document.querySelector(".cartes_medias");
-    console.log(cartesMedias);
     cartesMedias.innerHTML = "";
 
     //affichage lightbox
     const lightbox = document.querySelector(".lightbox");
-    console.log(lightbox);
     lightbox.innerHTML = "";
-
     let totalLikes = 0;
     let i = 0;
+    let test = 0;
     medias.forEach(media => {
+        console.log("testnbmedia:"+media.length);
         if (media.photographerId == photographerId) {
+            test += 1;
             const mediaModel = mediaFactory(media);
             const userMediaDOM = mediaModel.getUserMediaDOM();
             cartesMedias.appendChild(userMediaDOM);
@@ -111,7 +109,6 @@ function displayDataMedia(medias) {
 
 function ajoutLikes() {
     const coeurs = document.querySelectorAll(".coeur");// je cible le span des coeurs
-    console.log(coeurs);
     coeurs.forEach(e => {
 
         //event click
