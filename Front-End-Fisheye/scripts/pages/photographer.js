@@ -67,7 +67,6 @@ function displayDataMedia(medias) {
     let i = 0;
     let test = 0;
     medias.forEach(media => {
-        console.log("testnbmedia:"+media.length);
         if (media.photographerId == photographerId) {
             test += 1;
             const mediaModel = mediaFactory(media);
