@@ -14,6 +14,7 @@ function createIconeLightboxDom() {
     iconePrecedent.id = "precedent";
     iconePrecedent.setAttribute("onclick", "mediaNav(-1)");
     iconePrecedent.setAttribute("aria-label", "image précédente");
+    iconePrecedent.setAttribute("tabindex", 0);
     lightbox.appendChild(iconePrecedent);
 
     const iconeSuivant = document.createElement("i");
@@ -21,12 +22,14 @@ function createIconeLightboxDom() {
     iconeSuivant.setAttribute("onclick", "mediaNav(1)");
     iconeSuivant.id = "suivant";
     iconeSuivant.setAttribute("aria-label", "image suivante");
+    iconeSuivant.setAttribute("tabindex", 0);
     lightbox.appendChild(iconeSuivant);
 
     const iconeClose = document.createElement("i");
     iconeClose.className = "fas fa-times";
     iconeClose.id = "close";
     iconeClose.setAttribute("aria-label", "fermer la lightbox");
+    iconeClose.setAttribute("tabindex", 0);
     lightbox.appendChild(iconeClose);
     iconeClose.addEventListener("click", close);
 
@@ -54,6 +57,7 @@ function createMediaLightboxDom(data) {
         source.setAttribute("src", mp4);
         source.setAttribute("alt", title);
         source.setAttribute("type", "video/mp4");
+        source.setAttribute("tabindex", 0);
         photoVideo.appendChild(source);
         lien.appendChild(photoVideo);
         mediaLightbox.appendChild(lien);
@@ -64,6 +68,7 @@ function createMediaLightboxDom(data) {
         lien.setAttribute("href", photo);
         img.setAttribute("src", photo);
         img.setAttribute("alt", "photo" + " " + title);
+        img.setAttribute("tabindex", 0);
         lien.appendChild(img);
         mediaLightbox.appendChild(lien);
     }

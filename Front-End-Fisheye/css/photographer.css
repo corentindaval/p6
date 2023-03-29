@@ -13,6 +13,11 @@
     margin: 0 100px;
 }
 
+.focusable:focus {
+    border: #901C1C solid 5px;
+    border-radius: 20px;
+}
+
 .photographerHeader {
     display: flex;
     width: 100%;
