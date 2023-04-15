@@ -18,7 +18,8 @@
         <section class="photograph_medias">
             <div class="tri">
                 <p class="trier_par">Trier par</p>
-                <select class="choix" tabindex="3">
+                <label for="choix" hidden>tri</label>
+                <select id="choix" class="choix" tabindex="3">
                     <option class="pop" value="pop">Popularité</option>
                     <option class="date" value="date">Date</option>
                     <option class="titre" value="titre">Titre</option>
@@ -27,7 +28,7 @@
             <div class="cartes_medias">
             </div>
             <aside class="bandeau">
-                <p id="total_likes"> </p><i class="fas fa-heart" tabindex="4"></i><p id="gain"></p>
+                <p id="total_likes"> </p><em class="fas fa-heart" tabindex="4"></em><p id="gain"></p>
             </aside>
         </section>
     </main>

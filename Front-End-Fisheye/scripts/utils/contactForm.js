@@ -94,7 +94,12 @@ btnEnvoyer.addEventListener("click", validFormulaire);
 
 
 function validFormulaire(e) {
-    if (validPrenom() & validNom() & validEmail() & validMessage()) {
+    const inputPrenom = document.querySelector("#prenom");
+    const inputNom = document.querySelector("#nom");
+    const inputMail = document.querySelector("#email");
+    const inputMessage = document.querySelector("#message");
+    if (validPrenom(inputPrenom) & validNom(inputNom) & validEmail(inputMail) & validMessage(inputMessage)) {
+        console.log("prenom:" + inputPrenom.value + " nom:" + inputNom.value + " mail:" + inputMail.value + " message:" + inputMessage.value);
         closeModal();
         document.getElementById("formulaire").reset();              //remise à zero des champs du formulaire
     } else {

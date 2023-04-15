@@ -68,7 +68,7 @@ function displayDataMedia(medias) {
     let test = 0;
     medias.forEach(media => {
         if (media.photographerId == photographerId) {
-            test += 1;
+           
             const mediaModel = mediaFactory(media);
             const userMediaDOM = mediaModel.getUserMediaDOM();
             cartesMedias.appendChild(userMediaDOM);
@@ -109,25 +109,40 @@ function displayDataMedia(medias) {
 function ajoutLikes() {
     const coeurs = document.querySelectorAll(".coeur");// je cible le span des coeurs
     coeurs.forEach(e => {
-
+        var ischecked = false;
         //event click
         e.addEventListener("click", function () {// au click sur l'element
 
             const nbreLike = e.parentElement.children[1];//creation constante qui cible le nbre de like
-
-            nbreLike.textContent++;// j'aoute 1 au nbre de like
-            let totalLikes = document.getElementById("total_likes");// je cible le total des likes dans le bandeau
-            totalLikes.innerHTML++; // j'ajoute 1 a ce total
+            if (ischecked == false) {
+                nbreLike.textContent++;// j'ajoute 1 au nbre de like
+                let totalLikes = document.getElementById("total_likes");// je cible le total des likes dans le bandeau
+                totalLikes.innerHTML++; // j'ajoute 1 a ce total
+                ischecked = true;
+            } else {
+                nbreLike.textContent--;// j'ajoute 1 au nbre de like
+                let totalLikes = document.getElementById("total_likes");// je cible le total des likes dans le bandeau
+                totalLikes.innerHTML--; // j'ajoute 1 a ce total
+                ischecked = false;
+            }
+          
         });
 
         //event clavier
         e.addEventListener("keypress", function () {
 
             const nbreLike = e.parentElement.children[1];
-
-            nbreLike.textContent++;
-            let totalLikes = document.getElementById("total_likes");
-            totalLikes.innerHTML++;
+            if (ischecked == false) {
+                nbreLike.textContent++;
+                let totalLikes = document.getElementById("total_likes");
+                totalLikes.innerHTML++;
+            } else {
+                nbreLike.textContent--;// j'ajoute 1 au nbre de like
+                let totalLikes = document.getElementById("total_likes");// je cible le total des likes dans le bandeau
+                totalLikes.innerHTML--; // j'ajoute 1 a ce total
+                ischecked = false;
+            }
+           
         });
     });
 }
